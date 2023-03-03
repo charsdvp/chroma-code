@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: .3s all ease;
+}
+body{
+  color: #fffffe;
+  background: #16161a;
+  font-family: 'Quicksand', sans-serif;
+}
+/* Barra de desplazamiento vertical */
+::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra */
+  background-color: #16161a; /* Color de fondo */
+}
+
+/* Pista */
+::-webkit-scrollbar-track {
+  background-color: #16161a; /* Color de fondo */
+}
+
+/* Pulgar */
+::-webkit-scrollbar-thumb {
+  background-color: #c6c0c0d3; /* Color del pulgar */
+  border-radius: 10px; /* Borde redondeado */
+}
+
+/* Al pasar el ratón sobre la barra de desplazamiento */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #999; /* Color del pulgar al pasar el ratón */
+}
+li{
+  list-style: none;
+}
+.contenedor__header{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__titulo{
+  padding: 20px 0 0 0;
+  font-size: 7vw;
+}
+.contenedor__paletas{
+  padding: 40px 0;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+.contenedor__paleta{
+  width: 200px; 
+  border-radius: 6px;
+}
+.color{
+  width: 100%;
+  height: 50px;
+}
+.color:nth-child(1){
+  border-radius: 6px 6px 0 0;
+}
+.color:nth-child(4){
+  border-radius: 0 0 6px 6px;
+}
+.btn__copiar{
+  color: #fffffe;
+  background: none;
+  cursor: pointer;
+  border: none;
+  margin: 10px 0;
+  font-weight: bold;
+  padding: 5px;
+}
+.btn__copiar:hover, .btn__copiar:focus{
+  color: #72757e;
+}
+.contenedor__footer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor__redes{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.link__red{
+  text-decoration: none;
+  color: #fffffe;
+  display: block;
+  padding: 15px 10;
+}
+.link__red:hover, .link__red:focus{
+  color: #7f5af0;
+}
+.copyright{
+  display: block;
+  margin: 25px;
+}
