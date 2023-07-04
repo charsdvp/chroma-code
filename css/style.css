@@ -62,12 +62,20 @@ li{
 .color{
   width: 100%;
   height: 50px;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-weight: bold;
 }
 .color:nth-child(1){
   border-radius: 6px 6px 0 0;
 }
 .color:nth-child(4){
   border-radius: 0 0 6px 6px;
+}
+.color:hover, .color:active{
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
 }
 .btn__copiar{
   color: #fffffe;
@@ -78,10 +86,24 @@ li{
   font-weight: bold;
   padding: 5px;
 }
-.btn__copiar:hover, .btn__copiar:focus{
+.btn__copiar:hover, .btn__copiar:active{
   color: #72757e;
 }
+.generarBtn{
+  color: #fffffe;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: #5326d9;
+  border: 1px solid #5326d9;
+  font-weight: bold;
+  outline: none;
+}
+.generarBtn:hover{
+  background-color: #5326d981;
+}
 .contenedor__footer{
+  margin-top: 50px;
   width: 100%;
   display: flex;
   flex-direction: column;
