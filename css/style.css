@@ -36,9 +36,10 @@ li{
 }
 .contenedor{
   width: 100%;
-  min-height: 100vh;
+  min-height: auto;
 }
 .contenedor-nav{
+  height: auto;
   width: 100%;
   padding: 0 45px;
   height: 80px;
@@ -47,6 +48,7 @@ li{
   justify-content: space-between;
   position: fixed;
   background-color: #16161a;
+  z-index: 8;
 }
 .contenedor-nav-logo{
   font-weight: bold;
@@ -55,7 +57,7 @@ li{
   cursor: pointer;
   background: transparent;
   border: none;
-  z-index: 99999999;
+  z-index: 9;
 }
 .contenedor-paletas{
   padding: 130px 0;
@@ -75,6 +77,14 @@ li{
   transform: translateX(250px);
   position: fixed;
   transition: transform .3s ease;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  flex-direction: column;
+  padding: 85px 0 0 0;
+  z-index: 8;
+  overflow-y: auto;
 }
 .is-active{
   transform: translateX(0px);
@@ -103,9 +113,10 @@ li{
 .color:last-child{
   border-radius: 0 0 6px 6px; 
 }
-.color:hover, .color:active{
+.color:hover{
   transition: all 0.3s ease-in-out;
-  transform: scale(1.1);
+  transform: scale(1.1);  
+  z-index: 1;
 }
 
 .contenedor-buttons{

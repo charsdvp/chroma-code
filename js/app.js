@@ -12,7 +12,7 @@ document.addEventListener('click', (e) => {
 })
 
 document.addEventListener('DOMContentLoaded', (e) => {
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 2; i++) {
     createPaleta()
   }
 })
