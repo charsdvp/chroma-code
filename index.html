@@ -1,48 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- ? Metadatos Open Graph para Twtter -->
-  <meta property="twitter:title" content="ChromaCode">
-  <meta property="twitter:description" content="En esta página podrás encontrar varias paletas de colores">
-  <meta property="twitter:image" content="https://cdn-icons-png.flaticon.com/128/929/929286.png">  
-  <!-- ? Metadatos Open Graph para Facebook -->
-  <meta property="og:title" content="ChromaCode">
-  <meta property="og:description" content="En esta página podrás encontrar varias paletas de colores">
-  <meta property="og:url" content="https://charsdvp.github.io/chroma-code/">
-  <meta property="og:image" content="https://cdn-icons-png.flaticon.com/128/929/929286.png">    
-  <link rel="shortcut icon" href="./assets/pantone.png" type="image/x-icon">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Chroma Code</title>
-</head>
-<body>
-  <div class="contenedor__header">
-    <span class="header__titulo">&#60;Chroma Code&#47;&#62;</span>
-    <div class="contenedor__paletas"></div>
-    <div class="contenedor__boton">
-      <button class="generarBtn">Generar más</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ? Metadatos Open Graph para Twtter -->
+    <meta property="twitter:title" content="ChromaCode" />
+    <meta
+      property="twitter:description"
+      content="En esta página podrás encontrar varias paletas de colores"
+    />
+    <meta
+      property="twitter:image"
+      content="https://cdn-icons-png.flaticon.com/128/929/929286.png"
+    />
+    <!-- ? Metadatos Open Graph para Facebook -->
+    <meta property="og:title" content="ChromaCode" />
+    <meta
+      property="og:description"
+      content="En esta página podrás encontrar varias paletas de colores"
+    />
+    <meta property="og:url" content="https://charsdvp.github.io/chroma-code/" />
+    <meta
+      property="og:image"
+      content="https://cdn-icons-png.flaticon.com/128/929/929286.png"
+    />
+    <link rel="shortcut icon" href="./assets/pantone.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Chroma Code</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <nav class="contenedor-nav">
+        <span class="contenedor-nav-logo">&#60;Chroma Code&#47;&#62;</span>
+        <button class="contenedor-nav-button">
+          <img src="./assets/menu-deep.svg" alt="">
+        </button>
+        <aside class="contenedor-favoritos">
+
+        </aside>
+      </nav>
+      <div class="contenedor-paletas">
+        
+      </div>    
     </div>
-    <div class="contenedor__footer">
-      <ul class="contenedor__redes">
-        <li class="lista__item">
-          <a href="https://www.facebook.com/profile.php?id=100087881793975" class="link__red" target="_blank">Facebook</a>
-        </li>
-        <li class="lista__item">
-          <a href="https://www.instagram.com/chars_dvp/" class="link__red" target="_blank">Instagram</a>
-        </li>
-        <li class="lista__item">
-          <a href="https://twitter.com/charsdvp" class="link__red" target="_blank">Twitter</a>
-        </li>
-        <li class="lista__item">
-          <a href="https://github.com/charsdvp/" class="link__red" target="_blank">Github</a>
-        </li>
-      </ul>
-      <small class="copyright">&COPY;Carlos Sánchez && Error420</small>
-    </div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js" integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="./js/app.js" type="module" defer></script>
-</body>
+    <!-- <div class="contenedor__header">
+      <div class="contenedor__header__web">
+        <span class="header__titulo">&#60;Chroma Code&#47;&#62;</span>
+        <div class="contenedor__paletas">
+            aqui ira la paleta de color 
+        </div>
+        <div class="contenedor__boton">
+          <button class="generarBtn">Generar más</button>
+        </div>
+        <div class="contenedor__footer">
+          <ul class="contenedor__redes">
+            <li class="lista__item">
+              <a
+                href="https://www.facebook.com/profile.php?id=100087881793975"
+                class="link__red"
+                target="_blank"
+                >Facebook</a
+              >
+            </li>
+            <li class="lista__item">
+              <a
+                href="https://www.instagram.com/chars_dvp/"
+                class="link__red"
+                target="_blank"
+                >Instagram</a
+              >
+            </li>
+            <li class="lista__item">
+              <a
+                href="https://twitter.com/charsdvp"
+                class="link__red"
+                target="_blank"
+                >Twitter</a
+              >
+            </li>
+            <li class="lista__item">
+              <a
+                href="https://github.com/charsdvp/"
+                class="link__red"
+                target="_blank"
+                >Github</a
+              >
+            </li>
+          </ul>
+          <small class="copyright">&COPY;Carlos Sánchez && Error420</small>
+        </div>
+      </div>
+    </div> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"
+      integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/app.js" type="module" defer></script>
+  </body>
 </html>

@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: .3s all ease;
+  /* transition: .3s all ease; */
 }
 body{
   color: #fffffe;
@@ -12,7 +12,7 @@ body{
 }
 /* Barra de desplazamiento vertical */
 ::-webkit-scrollbar {
-  width: 10px; /* Ancho de la barra */
+  width: 8px; /* Ancho de la barra */
   background-color: #16161a; /* Color de fondo */
 }
 
@@ -34,19 +34,124 @@ body{
 li{
   list-style: none;
 }
+.contenedor{
+  width: 100%;
+  min-height: 100vh;
+}
+.contenedor-nav{
+  width: 100%;
+  padding: 0 45px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  background-color: #16161a;
+}
+.contenedor-nav-logo{
+  font-weight: bold;
+}
+.contenedor-nav-button{
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  z-index: 99999999;
+}
+.contenedor-paletas{
+  padding: 130px 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 55px;
+}
+.contenedor-favoritos{
+  width: 250px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #16161a;
+  transform: translateX(250px);
+  position: fixed;
+  transition: transform .3s ease;
+}
+.is-active{
+  transform: translateX(0px);
+  display: flex;
+  flex-direction: column;
+}
+/* * estilos paleta de color */
+.contenedor-paleta{
+  width: 200px;
+  border-radius: 50%;
+}
+.contenedor-colors{
+  border-radius: 6px;
+}
+.color{
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+.color:first-child{
+  border-radius: 6px 6px 0 0;
+}
+.color:last-child{
+  border-radius: 0 0 6px 6px; 
+}
+.color:hover, .color:active{
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+.contenedor-buttons{
+  height: 35px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+}
+.btn-copiar, .btn-like{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.btn-copiar{
+  color: #fffffe;
+  font-weight: bold;
+}
+/* ! estilos anteriores 
 .contenedor__header{
   min-height: 100vh;
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+.contenedor__header__web{
+ width: 100%;
+ text-align: center;
+}
+.contenedor__aside__web{
+  padding: 35px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  border-left: 1px solid #eee;
+  min-height: 100vh;
 }
 .header__titulo{
   padding: 20px 0 0 0;
   font-size: 7vw;
 }
 .contenedor__paletas{
+  margin: 0 auto;
   padding: 40px 0;
   width: 80%;
   display: flex;
@@ -58,6 +163,7 @@ li{
 .contenedor__paleta{
   width: 200px; 
   border-radius: 6px;
+  text-align: left;
 }
 .color{
   width: 100%;
@@ -77,6 +183,12 @@ li{
   transition: all 0.3s ease-in-out;
   transform: scale(1.1);
 }
+.contenedor__buttons{
+  padding: 0 15px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .btn__copiar{
   color: #fffffe;
   background: none;
@@ -88,6 +200,15 @@ li{
 }
 .btn__copiar:hover, .btn__copiar:active{
   color: #72757e;
+}
+.btn__like{
+  color: #fffffe;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+.icon-heart{
+  color: #fffffe;
 }
 .generarBtn{
   color: #fffffe;

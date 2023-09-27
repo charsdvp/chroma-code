@@ -1,5 +1,8 @@
 export default async function copyTextColor ( textCopy, elementHtml ){
-  elementHtml.innerText = "¡Copiado!";
+    const element = elementHtml
+
+    element.innerText = "¡Copiado!";
+
       const textToCopy = textCopy;
       try {
         await navigator.clipboard.writeText(textToCopy);
@@ -7,11 +10,11 @@ export default async function copyTextColor ( textCopy, elementHtml ){
         return err;
       }
       setTimeout(() => {
-        if(elementHtml instanceof HTMLButtonElement ){
-          elementHtml.innerText = "¡Copiar!";
+        if(element instanceof HTMLButtonElement ){
+          element.innerText = "Copiar";
         }
-        if(elementHtml instanceof HTMLLIElement ){
-          elementHtml.innerText = textToCopy;
+        if(element instanceof HTMLLIElement ){
+          element.innerText = textToCopy;
         }
       }, 300);
 }
