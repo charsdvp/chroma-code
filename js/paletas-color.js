@@ -3,8 +3,8 @@ import { arrayRango } from './logic/variacion-color.js';
 import { numberRandom } from './logic/id-random.js';
 
 // creamos un array para almacenar todas las paletas
-const PALETAS = [];
-let paleta;
+export const PALETAS = [];
+
 // creamos una funcion para crear la estructura de la paleta de color
 export default function createPaleta() {
   // capturamos el elemento padre
@@ -59,7 +59,7 @@ export default function createPaleta() {
     btn.addEventListener('click', (e) => {
       // !capturaremos el boton like y la paleta asociada
       const imgHeart = btn.firstElementChild;
-      paleta = btn.closest('.contenedor-paleta');
+      const paleta = btn.closest('.contenedor-paleta');
       const paletaId = paleta.getAttribute('data-id');
       // !url de las imagenes
       const orginalSrc = '../assets/heart.svg';
@@ -71,6 +71,9 @@ export default function createPaleta() {
       if (isLiked) {
         // si ya esta lleno lo vaciamos
         imgHeart.src = orginalSrc;
+        // Eliminar la paleta de localStorage si existe
+        localStorage.removeItem(paletaId);
+
         // encuentra la copia de la paleta en los favoritos y se elimina
         const contenedor_fav = document.querySelector('.contenedor-favoritos');
         const paletasFavoritas =
@@ -78,7 +81,6 @@ export default function createPaleta() {
 
         paletasFavoritas.forEach((paletaFav) => {
           if (paletaFav.getAttribute('data-id') === paletaId) {
-            console.log(paletaFav);
             contenedor_fav.removeChild(paletaFav);
           }
         });
@@ -88,11 +90,22 @@ export default function createPaleta() {
         // Clonamos la paleta y le agregamos un evento para deshacer la acción de "like"
         const paletaClon = paleta.cloneNode(true);
         paletaClon.setAttribute('data-id', paletaId);
+        
+        const copiaColors = paletaClon.querySelectorAll('.color')
+        agregarEventosColores(copiaColors)
 
+        const copiaBtnCopiar = paletaClon.querySelector('.btn-copiar')
+        copiaBtnCopiar.addEventListener('click', (e) => {
+          const paletaActual = PALETAS[index];
+          copyTextColor(paletaActual, e.target);
+        })
         const copiaBtnLike = paletaClon.querySelector('.btn-like');
         copiaBtnLike.firstElementChild.src = filledSrc;
-        // eventos copia boton like
+        // eventos copia boton like        
         copiaBtnLike.addEventListener('click', (e) => {
+          const paletaId = paletaClon.getAttribute('data-id');
+          // Eliminar la paleta de localStorage si existe
+          localStorage.removeItem(paletaId);
           // Eliminamos la paleta de favoritos
           const contenedor_fav = document.querySelector(
             '.contenedor-favoritos'
@@ -104,7 +117,23 @@ export default function createPaleta() {
         // Agregamos la paleta a favoritos
         const contenedor_fav = document.querySelector('.contenedor-favoritos');
         contenedor_fav.appendChild(paletaClon);
+
+        // Guardar la estructura HTML de la paleta en localStorage
+        localStorage.setItem(paletaId, paletaClon.innerHTML);
       }
+    });
+  });
+}
+
+export function agregarEventosColores(colors) {
+  colors.forEach((color) => {
+    color.addEventListener(
+      'mouseover',
+      (e) => (color.textContent = color.getAttribute('style').slice(12))
+    );
+    color.addEventListener('mouseout', (e) => (color.textContent = ''));
+    color.addEventListener('click', (e) => {
+      copyTextColor(color.getAttribute('style').slice(12), e.target);
     });
   });
 }
