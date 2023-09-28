@@ -24,7 +24,7 @@ export default function createPaleta() {
       <div class="contenedor-buttons">
         <button class="btn-copiar">Copiar</button>
         <button class="btn-like">
-          <img src="../assets/heart.svg" alt="" class="icon__heart">
+          <img src="./assets/heart.svg" alt="" class="icon__heart">
         </button>
       </div> 
     </div>`;
@@ -62,8 +62,8 @@ export default function createPaleta() {
       const paleta = btn.closest('.contenedor-paleta');
       const paletaId = paleta.getAttribute('data-id');
       // !url de las imagenes
-      const orginalSrc = '../assets/heart.svg';
-      const filledSrc = '../assets/heart-filled.svg';
+      const orginalSrc = './assets/heart.svg';
+      const filledSrc = './assets/heart-filled.svg';
 
       // comprobamos si el boton like ya esta lleno o vacio
       const isLiked = imgHeart.src.includes('heart-filled');
